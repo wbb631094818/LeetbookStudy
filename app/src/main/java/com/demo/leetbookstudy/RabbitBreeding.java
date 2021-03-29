@@ -42,11 +42,26 @@ public class RabbitBreeding {
 
 
     public static void main(String[] args) {
-        int i = 1;
-        for (i=1;i<=20;i++){
-            System.out.println("兔子第"+i+"个月的总数为："+f(i)+"对");
-        }
+        int m = 7000;
+//        for (i=1;i<=20;i++){
+//            System.out.println("兔子第"+m+"个月的总数为："+f(m)+"对");
+            System.out.println("兔子第"+m+"个月的总数为："+allCount(m)+"对");
+//        }
     }
+
+    public static int allCount(int n){
+        if (n == 0 || n ==1 ){
+            return 1;
+        }
+        int a = 1, b = 1, sum;
+        for (int i = 3; i <= n; i++) {
+            sum = a+b;
+            a= b;
+            b = sum;
+        }
+        return b;
+    }
+
     public static int f(int x){
         if (x==1 || x==2){
             return 1;
