@@ -86,7 +86,7 @@ public class LevelOrder2 {
      * @param root
      * @return
      */
-    public List<List<Integer>> levelOrder(TreeNode root) {
+    public List<List<Integer>> levelOrder1(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<>();
         List<List<Integer>> res = new ArrayList<>();
         if(root != null) queue.add(root);
