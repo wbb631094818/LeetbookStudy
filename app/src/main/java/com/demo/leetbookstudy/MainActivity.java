@@ -2,11 +2,13 @@ package com.demo.leetbookstudy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.admin.DevicePolicyManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.demo.leetbookstudy.buildtree.BuildTree;
 import com.demo.leetbookstudy.codec.Codec;
 import com.demo.leetbookstudy.permutation.Permutation;
 import com.demo.leetbookstudy.substructure.TreeNode;
@@ -23,13 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     public static void main(String[] args) {
-        Permutation permutation = new Permutation();
-       String[] strings = permutation.permutation("abcd");
-       System.out.println("size: "+strings.length);
-        System.out.print("[");
-        for (String str:strings) {
-            System.out.print("\""+str+"\",");
-        }
-        System.out.print("]");
+        int[] preorder = { 1, 2, 4, 7, 3, 5, 6, 8 };
+        int[] inorder = { 4, 7, 2, 1, 5, 3, 8, 6 };
+
+        new BuildTree().buildTree(preorder,inorder);
     }
 }
